@@ -1,0 +1,53 @@
+include mixins
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    meta(name='description', content='A crud-worthy learning experience!')
+    meta(name='keywords', content='crud, express, node, mongodb, learning')
+    meta(name='author', content='Jacob Hernandez')
+    meta(name='viewport', content='width=device-width, initial-scale=0.86, maximum-scale=3.0, minimum-scale=0.86')
+    
+    // script(async='', src='https://www.googletagmanager.com/gtag/js?id=UA-162903575-1')
+    // script.
+      // Google Analytics
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag('js', new Date())
+      gtag('config', 'UA-162903575-1');
+    // script.
+      // Google Tag Manager
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || []
+        w[l].push({
+          'gtm.start': new Date().getTime(),
+          event: 'gtm.js'
+        })
+        var f = d.getElementsByTagName(s)[0]
+        var j = d.createElement(s)
+        var dl = l !== 'dataLayer' ? '&l=' + l : ''
+        j.async = true
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl
+        f.parentNode.insertBefore(j, f)
+      })(window, document, 'script', 'dataLayer', 'GTM-P74VWZH')
+    link(rel='apple-touch-icon', href='images/favicon_io/apple-touch-icon.png')
+    link(rel='icon', href='images/favicon_io/android-chrome-192x192.png')
+
+    title= title
+    link(rel='stylesheet', href='styles/basscss.min.css')
+    link(rel='stylesheet', href='styles/style.css')
+    link(href='https://fonts.googleapis.com/css?family=Concert+One|Open+Sans:wght@300&display=swap', rel='stylesheet')
+  body
+    #wrapper.center
+      noscript
+        iframe(src='https://www.googletagmanager.com/ns.html?id=GTM-P74VWZH', height='0', width='0', style='display:none;visibility:hidden')
+      header.vw.center
+        block header
+      +spacer(8)
+      block main
+      +spacer(16)
+      footer.center.gray
+        block footer
+          small &copy; 2020 jacob hernandez

@@ -1,0 +1,13 @@
+extends layout
+
+//- block header
+//-   h1.salmon Crud Worthy
+
+block main
+  span#main
+    p hi there
+
+    form(action='/quotes', method='POST')
+      input(type='text', placeholder='name', name='name')
+      input(type='text', placeholder='quote', name='quote')
+      button(type='submit') Submit

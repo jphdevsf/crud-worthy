@@ -1,0 +1,214 @@
+
+body {
+  background-color:#111;
+  color: #ffffff;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  margin: 0;
+}
+
+a {
+  color: salmon;
+}
+p, label {
+  margin: 0;
+  line-height: 1.5em;
+  font-size: 1em;
+}
+
+h1,h2,h3,h4,h5,h6, .header-font {
+  font-family: 'Concert One', sans-serif;
+}
+h1{
+  font-size: 3em;
+  font-weight: 300;
+  margin: 0.35em 0.25em;
+}
+
+h2{
+  font-size: 1.5em;
+  font-weight: 300;
+}
+
+h3{
+  font-size: 0.75em;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+/* form styles */
+form {
+  width: 100%;
+  display: block;
+  position: relative;
+}
+
+form input, form select, form button {
+  line-height: 2.5em;
+  border: solid 2px #000000;
+  padding: 0.2em 0.8em;
+  box-sizing: border-box;
+  font-size:1.15em;
+  text-transform: lowercase;
+}
+
+form input, form button {
+  width: 100%;
+}
+
+input#rhymeText {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+input#rhymeText.invalid {
+  border: solid 2px red;
+}
+
+input#rhymeText.invalid:focus {
+  border: solid 2px #000000;
+}
+
+#rhymeButton {
+  background-color: salmon;
+}
+.error {
+  width: 100%;
+  padding: 0em 0.5em;
+  font-size: smaller;
+  color: red;
+  box-sizing: border-box;
+  position: relative;
+  margin-top: 4.4em;
+}
+
+@media screen and (min-width: 640px) {
+  form input, form button {
+    width: 49.75%;
+  }
+
+  .error {
+
+    position: absolute;
+    top: 0;
+  }
+} 
+/* utility classes */
+.smaller {
+  font-size: smaller;
+}
+.larger {
+  font-size: 1.15em;
+}
+
+.salmon {
+  color: salmon;
+}
+
+.bg-salmon {
+  background-color: salmon;
+}
+
+.gray {
+  color: #888888
+}
+.block {
+  display:block;
+}
+
+.spacer {
+  display: block;
+  line-height: 1em;
+  font-size: 1em;
+  margin:0;
+  padding: 0;
+}
+
+.vw {
+  font-size: 3.5vw;
+}
+
+@media screen and (min-width: 640px) {
+  .vw {
+    font-size: 1em;
+  }
+}
+
+/* layout */
+#wrapper {
+  min-height: 100vh;
+  overflow: hidden;
+  display: block;
+  position: relative;
+  padding-bottom: 4em;
+  box-sizing: border-box;
+  font-size: 1.125em;
+ }
+
+#main {
+  width: 95%;
+  margin: auto;
+  max-width: 600px;
+  display: block;
+}
+
+.inset {
+  width: 95%;
+  margin: auto;
+  display: block;
+}
+
+.rule {
+  height: 1px;
+  border: none;
+}
+
+#slant-rhymes {
+  /* max-width: 900px; */
+}
+
+#slant-rhymes ul {
+  list-style-type: none;
+  margin:0;
+  padding:0;
+}
+#slant-rhymes li {
+  display: inline-block;
+  margin: 0 0.5em;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 90%;
+  height: 4em;
+  left: 5%;
+ }
+
+ ul[class*="-syllable"] {
+  margin: 0 0 3% 7%;
+  padding: 0;
+  width: 43%;
+ }
+
+ 
+
+
+ ul[class*="-syllable"] li {
+   list-style-type: none;
+ }
+
+ @media screen and (min-width: 640px) {
+  ul[class*="-syllable"] {
+     margin:0 2em;
+     padding:0;
+     width: auto;
+  }
+  ul[class*="-syllable"] {
+    margin: 0 3% 3%;
+   }
+  #wrapper {
+    font-size: 1em;
+  }
+  }
+ }
