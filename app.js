@@ -10,7 +10,7 @@ let quotesCollection
 const dbUrl = 'mongodb+srv://watMan:Mstrkrft1@jacob-cluster-9x1gu.mongodb.net/crud-worthy?retryWrites=true&w=majority'
 const dbConfig = { useUnifiedTopology: true }
 
-// TODO: Continue tutorial. Search 'CRUD - CREATE (continued)' @ https://zellwk.com/blog/crud-express-mongodb/
+// TODO: Continue tutorial. Search 'CRUD - CREATE (continued)' @ https://zellwk.com/blog/crud-express-mongodb/i
 
 MongoClient.connect(dbUrl, dbConfig, (err, client) => {
   if (err) return console.error(err)
