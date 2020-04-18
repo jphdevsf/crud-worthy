@@ -5,13 +5,9 @@ const bodyParser = require('body-parser')
 const app = express()
 let quotesCollection
 
-
 // Database!
 const dbUrl = 'mongodb+srv://watMan:Mstrkrft1@jacob-cluster-9x1gu.mongodb.net/crud-worthy?retryWrites=true&w=majority'
 const dbConfig = { useUnifiedTopology: true }
-
-// TODO: Continue tutorial. Search 'CRUD - CREATE (continued)' @ https://zellwk.com/blog/crud-express-mongodb/i
-
 MongoClient.connect(dbUrl, dbConfig, (err, client) => {
   if (err) return console.error(err)
   console.log('Connected to Database')
@@ -28,15 +24,26 @@ MongoClient.connect(dbUrl, dbConfig, (err, client) => {
 
   // Meat & Potatoes!
   app.get('/', (req, res) => {
-    const myObj = {
-      title: 'Crud Worthy',
-      data: {},
-      errors: {}
-    }
-    res.render('index', myObj)
+    db.collection('quotes').find().toArray()
+      .then(quotes => {
+        const myObj = {
+          title: 'Crud Worthy',
+          data: {},
+          quotes: quotes,
+          errors: {}
+        }
+        console.log(myObj.quotes)
+        res.render('index', myObj)
+      })
+      .catch(/* ... */)
   })
+  //
   app.post('/quotes', (req, res) => {
     quotesCollection.insertOne(req.body)
+      .then(result => {
+        res.redirect('/')
+      })
+      .catch(error => console.error(error))
     console.log(req.body)
   })
   // Server!

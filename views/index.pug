@@ -7,7 +7,15 @@ block main
   span#main
     p hi there
 
-    form(action='/quotes', method='POST')
+    form(action='/quotes' method='POST')
       input(type='text', placeholder='name', name='name')
       input(type='text', placeholder='quote', name='quote')
       button(type='submit') Submit
+    br
+    // TODO client side js for this button. Search CRUD - UPDATE @ https://zellwk.com/blog/crud-express-mongodb/#crud---update
+    button.update
+    span.all-the-quotes
+      ul
+        each quote in quotes
+          li
+            span= quote.name + ' says: ' + quote.quote 
