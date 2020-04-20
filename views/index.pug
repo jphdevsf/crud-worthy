@@ -13,7 +13,10 @@ block main
       button(type='submit') Submit
     br
     // TODO client side js for this button. Search CRUD - UPDATE @ https://zellwk.com/blog/crud-express-mongodb/#crud---update
-    button.update
+    button#update Replace The Thing
+    button#delete Delete The Thing
+    div#message.salmon
+    script(src="js/main.js")
     span.all-the-quotes
       ul
         each quote in quotes

@@ -46,6 +46,38 @@ MongoClient.connect(dbUrl, dbConfig, (err, client) => {
       .catch(error => console.error(error))
     console.log(req.body)
   })
+  //
+  app.put('/quotes', (req, res) => {
+    quotesCollection.findOneAndUpdate(
+      { name: 'poop' },
+      {
+        $set: {
+          name: req.body.name,
+          quote: req.body.quote
+        }
+      },
+      {
+        upsert: true
+      }
+    )
+      .then(result => {
+        res.json('Success')
+      })
+      .catch(error => console.error(error))
+  })
+  //
+  app.delete('/quotes', (req, res) => {
+    quotesCollection.deleteOne(
+      { name: req.body.name }
+    )
+      .then(result => {
+        if (result.deletedCount === 0) {
+          return res.json('No Query Match')
+        }
+        res.json('Deleted Darth Vadar\'s quote')
+      })
+      .catch(error => console.error(error))
+  })
   // Server!
   app.listen(3000, () => {
     console.log('listening on 3000')
